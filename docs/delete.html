@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="EatDiary 飲食日記帳戶刪除 - 請求刪除您的帳戶和個人資料">
+    <title>EatDiary 刪除帳戶</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft JhengHei", "PingFang TC", "Noto Sans TC", sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        header {
+            background: linear-gradient(135deg, #d32f2f 0%, #c62828 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        header .subtitle {
+            font-size: 1rem;
+            opacity: 0.95;
+        }
+
+        .content {
+            padding: 3rem 2rem;
+        }
+
+        .important-notice {
+            background-color: #ffebee;
+            border-left: 4px solid #d32f2f;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 4px;
+        }
+
+        .important-notice h3 {
+            color: #c62828;
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            color: #d32f2f;
+            font-size: 1.8rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #d32f2f;
+        }
+
+        h3 {
+            color: #c62828;
+            font-size: 1.4rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        .steps-container {
+            background-color: #fff3e0;
+            border-radius: 8px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #ffe0b2;
+        }
+
+        .step:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .step-number {
+            background-color: #ff9800;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+            margin-right: 1.5rem;
+        }
+
+        .step-content {
+            flex-grow: 1;
+        }
+
+        .step-content h4 {
+            color: #e65100;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .data-category {
+            background-color: #f5f5f5;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .data-category h4 {
+            color: #d32f2f;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .data-category ul {
+            margin-left: 1.5rem;
+            margin-bottom: 0;
+        }
+
+        .data-category ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .data-tag {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-right: 0.5rem;
+        }
+
+        .delete-tag {
+            background-color: #d32f2f;
+            color: white;
+        }
+
+        .keep-tag {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .email-box {
+            background-color: #2196F3;
+            color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .email-box h3 {
+            color: white;
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        .email-box a {
+            display: inline-block;
+            background-color: white;
+            color: #2196F3;
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-top: 1rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .email-box a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .timeline {
+            background-color: #e3f2fd;
+            border-left: 4px solid #2196F3;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        .timeline h4 {
+            color: #1976d2;
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            background-color: #f5f5f5;
+            padding: 2rem;
+            text-align: center;
+            color: #666;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: #2196F3;
+            text-decoration: none;
+            margin-top: 1rem;
+            font-weight: 500;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .section-icon {
+            display: inline-block;
+            margin-right: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .content {
+                padding: 2rem 1.5rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            h3 {
+                font-size: 1.2rem;
+            }
+
+            .step {
+                flex-direction: column;
+            }
+
+            .step-number {
+                margin-bottom: 1rem;
+            }
+        }
+
+        @media print {
+            body {
+                background-color: white;
+            }
+
+            .container {
+                box-shadow: none;
+            }
+
+            header {
+                background: #d32f2f;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🗑️ 刪除 EatDiary 帳戶</h1>
+            <p class="subtitle">Delete Your Account</p>
+        </header>
+
+        <div class="content">
+            <div class="important-notice">
+                <h3>⚠️ 重要提醒</h3>
+                <p><strong>帳戶刪除是永久性的操作，無法復原。</strong></p>
+                <p>在提出刪除請求前，請確認您已備份所有重要資料。一旦帳戶被刪除，您將無法再次存取這些資料。</p>
+            </div>
+
+            <h2><span class="section-icon">📱</span>應用程式資訊</h2>
+            <p><strong>應用程式名稱：</strong>EatDiary 飲食日記</p>
+            <p><strong>開發人員：</strong>Yaoshou365</p>
+            <p><strong>服務信箱：</strong>service@yaoshou365.com</p>
+
+            <h2><span class="section-icon">📋</span>如何請求刪除帳戶</h2>
+            <p>請按照以下步驟完成帳戶刪除請求：</p>
+
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>寄送刪除請求郵件</h4>
+                        <p>請使用您註冊 EatDiary 時使用的電子郵件地址，寄送郵件至 <strong>service@yaoshou365.com</strong></p>
+                        <p>郵件主旨請註明：<strong>「請求刪除 EatDiary 帳戶」</strong></p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>提供必要資訊</h4>
+                        <p>為了確保帳戶安全，請在郵件中包含以下資訊：</p>
+                        <ul>
+                            <li>您的註冊電子郵件地址</li>
+                            <li>帳戶使用者名稱（如果記得的話）</li>
+                            <li>刪除原因（選填，幫助我們改進服務）</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>等待確認回覆</h4>
+                        <p>我們的團隊將在 <strong>3 個工作日內</strong>回覆您的請求，並確認您的身份。</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h4>完成帳戶刪除</h4>
+                        <p>身份確認後，我們將在 <strong>7 個工作日內</strong>完成帳戶刪除程序，並寄送確認通知給您。</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="email-box">
+                <h3>📧 立即寄送刪除請求</h3>
+                <p>點擊下方按鈕開始寄送刪除請求郵件</p>
+                <a href="mailto:service@yaoshou365.com?subject=請求刪除 EatDiary 帳戶&body=您好，我想要刪除我的 EatDiary 帳戶。%0D%0A%0D%0A我的註冊電子郵件：【請填寫】%0D%0A帳戶使用者名稱：【請填寫】%0D%0A刪除原因：【選填】%0D%0A%0D%0A謝謝。">
+                    寄送刪除請求郵件
+                </a>
+            </div>
+
+            <h2><span class="section-icon">📦</span>刪除的資料類型</h2>
+            <p>當您的帳戶被刪除後，以下資料將被<strong>永久刪除</strong>：</p>
+
+            <div class="data-category">
+                <h4><span class="data-tag delete-tag">將被刪除</span>個人帳戶資料</h4>
+                <ul>
+                    <li>✓ 電子郵件地址和登入憑證</li>
+                    <li>✓ 個人檔案資訊</li>
+                    <li>✓ 帳戶設定和偏好</li>
+                </ul>
+            </div>
+
+            <div class="data-category">
+                <h4><span class="data-tag delete-tag">將被刪除</span>飲食記錄資料</h4>
+                <ul>
+                    <li>✓ 所有上傳的食物照片</li>
+                    <li>✓ 飲食記錄的文字說明</li>
+                    <li>✓ 營養數據記錄</li>
+                    <li>✓ 餐廳位置資訊</li>
+                </ul>
+            </div>
+
+            <div class="data-category">
+                <h4><span class="data-tag delete-tag">將被刪除</span>健康數據</h4>
+                <ul>
+                    <li>✓ 體重記錄</li>
+                    <li>✓ 身高記錄</li>
+                    <li>✓ BMR/TDEE 計算結果</li>
+                    <li>✓ 個人營養目標設定</li>
+                </ul>
+            </div>
+
+            <div class="data-category">
+                <h4><span class="data-tag delete-tag">將被刪除</span>社群互動資料</h4>
+                <ul>
+                    <li>✓ 您發布的公開食物照片</li>
+                    <li>✓ 社群互動記錄</li>
+                    <li>✓ 追蹤與被追蹤關係</li>
+                </ul>
+            </div>
+
+            <h2><span class="section-icon">⏱️</span>保留資料說明</h2>
+
+            <div class="timeline">
+                <h4>📅 資料保留期限</h4>
+                <p><strong>立即刪除：</strong>大部分個人資料將在帳戶刪除確認後 <strong>7 個工作日內</strong>從我們的系統中永久刪除。</p>
+                <p><strong>備份資料：</strong>基於系統備份的技術原因，某些資料可能會在備份系統中保留最多 <strong>30 天</strong>，之後將會自動清除。</p>
+                <p><strong>法律義務：</strong>如有法律或監管要求，我們可能需要保留某些資料（如交易記錄）最多 <strong>5 年</strong>。這些資料將被匿名化處理，無法識別個人身份。</p>
+            </div>
+
+            <div class="data-category">
+                <h4><span class="data-tag keep-tag">可能暫時保留</span>系統日誌</h4>
+                <ul>
+                    <li>基於安全和技術原因，匿名化的系統日誌可能會暫時保留</li>
+                    <li>這些日誌不包含可識別個人身份的資訊</li>
+                    <li>保留期限：最多 <strong>90 天</strong></li>
+                </ul>
+            </div>
+
+            <h2><span class="section-icon">❓</span>常見問題</h2>
+
+            <h3>Q: 刪除帳戶需要多久時間？</h3>
+            <p>A: 我們會在收到您的請求後 3 個工作日內確認，並在確認後 7 個工作日內完成刪除程序。整個流程約需 10 個工作日。</p>
+
+            <h3>Q: 刪除後可以復原嗎？</h3>
+            <p>A: 不可以。帳戶刪除是永久性的，無法復原。請在刪除前確認您已備份所有重要資料。</p>
+
+            <h3>Q: 刪除帳戶後可以用同一個 Email 重新註冊嗎？</h3>
+            <p>A: 可以。在帳戶完全刪除後（約 10 個工作日），您可以使用相同的電子郵件地址重新註冊新帳戶。</p>
+
+            <h3>Q: 我的公開照片會被刪除嗎？</h3>
+            <p>A: 是的。當您刪除帳戶時，您上傳的所有照片（包括公開分享的食物照片）都會從系統中永久刪除。</p>
+
+            <h3>Q: 如果我只想刪除部分資料怎麼辦？</h3>
+            <p>A: 如果您不想完全刪除帳戶，可以在應用程式內手動刪除特定的飲食記錄或照片。只有完整的帳戶刪除需要透過郵件聯繫我們。</p>
+
+            <h2><span class="section-icon">📞</span>需要協助？</h2>
+            <p>如果您在帳戶刪除過程中遇到任何問題，或有任何疑問，請隨時與我們聯繫：</p>
+            <p><strong>Email:</strong> service@yaoshou365.com</p>
+            <p><strong>回覆時間:</strong> 通常在 1-3 個工作日內回覆</p>
+
+            <hr style="margin: 3rem 0; border: none; border-top: 1px solid #e0e0e0;">
+
+            <p style="text-align: center; color: #666; font-size: 0.9rem;">
+                我們重視您的隱私權。如需了解更多資料處理資訊，請參閱我們的
+                <a href="./index.html" class="back-link">隱私權政策</a>
+            </p>
+        </div>
+
+        <footer>
+            <p><strong>EatDiary 飲食日記</strong></p>
+            <p>© 2025 Yaoshou365. All rights reserved.</p>
+            <p style="margin-top: 1rem;">
+                <a href="./index.html" class="back-link">← 返回隱私權政策</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
