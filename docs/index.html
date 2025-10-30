@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="EatDiary 飲食日記隱私權政策 - 了解我們如何保護您的個人資料">
-    <title>EatDiary 隱私權政策</title>
+    <meta name="description" content="EatDiary 飲食日記 - 你的健康飲食管理與分享社群。記錄每日飲食、追蹤營養、分享美食照片。">
+    <meta name="keywords" content="飲食日記,熱量追蹤,營養管理,健康管理,美食分享,體重管理">
+    <title>EatDiary 飲食日記 - 健康飲食管理與分享社群</title>
     <style>
         * {
             margin: 0;
@@ -20,7 +21,7 @@
         }
 
         .container {
-            max-width: 900px;
+            max-width: 1200px;
             margin: 0 auto;
             background-color: white;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -29,110 +30,273 @@
         header {
             background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
             color: white;
-            padding: 3rem 2rem;
+            padding: 4rem 2rem;
             text-align: center;
         }
 
         header h1 {
-            font-size: 2.5rem;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        header .tagline {
+            font-size: 1.3rem;
+            opacity: 0.95;
             margin-bottom: 0.5rem;
-            font-weight: 600;
         }
 
         header .subtitle {
             font-size: 1rem;
-            opacity: 0.95;
+            opacity: 0.9;
         }
 
         .content {
             padding: 3rem 2rem;
         }
 
-        .last-updated {
-            display: inline-block;
-            background-color: #e8f5e9;
-            color: #2e7d32;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            margin-bottom: 2rem;
-            border: 1px solid #c8e6c9;
+        .intro-section {
+            text-align: center;
+            padding: 2rem 0 3rem;
+            border-bottom: 2px solid #e0e0e0;
+            margin-bottom: 3rem;
         }
 
-        h2 {
+        .intro-section h2 {
             color: #4CAF50;
-            font-size: 1.8rem;
-            margin-top: 2.5rem;
+            font-size: 2rem;
             margin-bottom: 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 3px solid #4CAF50;
         }
 
-        h3 {
+        .intro-section p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .feature-card {
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 2rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            border-color: #4CAF50;
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .feature-card h3 {
             color: #2e7d32;
-            font-size: 1.4rem;
-            margin-top: 1.5rem;
-            margin-bottom: 0.8rem;
-        }
-
-        p {
+            font-size: 1.5rem;
             margin-bottom: 1rem;
         }
 
-        ul {
-            margin-left: 2rem;
-            margin-bottom: 1.5rem;
+        .feature-list {
+            list-style: none;
+            padding: 0;
         }
 
-        ul li {
-            margin-bottom: 0.5rem;
+        .feature-list li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
             position: relative;
-            padding-left: 0.5rem;
+            color: #555;
         }
 
-        ul li::marker {
+        .feature-list li::before {
+            content: "•";
             color: #4CAF50;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
         }
 
-        .highlight-box {
-            background-color: #e8f5e9;
-            border-left: 4px solid #4CAF50;
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-            border-radius: 4px;
-        }
-
-        .highlight-box h3 {
-            margin-top: 0;
-            color: #2e7d32;
-        }
-
-        .warning-box {
-            background-color: #fff3e0;
-            border-left: 4px solid #ff9800;
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-            border-radius: 4px;
-        }
-
-        .data-type {
+        .privacy-badge {
             display: inline-block;
-            background-color: #4CAF50;
+            background-color: #2196F3;
             color: white;
             padding: 0.3rem 0.8rem;
             border-radius: 15px;
             font-size: 0.85rem;
             font-weight: 500;
+            margin-left: 0.5rem;
+        }
+
+        .public-badge {
+            background-color: #ff9800;
+        }
+
+        .target-audience {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin: 3rem 0;
+        }
+
+        .target-audience h2 {
+            color: #2e7d32;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .audience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .audience-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .audience-item::before {
+            content: "✓";
+            color: #4CAF50;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-radius: 12px;
+            margin: 3rem 0;
+        }
+
+        .cta-section h2 {
+            color: white;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .download-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            background-color: white;
+            color: #4CAF50;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .download-btn::before {
+            content: "📱";
+            font-size: 1.5rem;
             margin-right: 0.5rem;
+        }
+
+        .privacy-section {
+            background-color: #e3f2fd;
+            border-left: 4px solid #2196F3;
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 3rem 0;
+        }
+
+        .privacy-section h2 {
+            color: #1976d2;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .privacy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .privacy-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .privacy-item h4 {
+            color: #1976d2;
             margin-bottom: 0.5rem;
         }
 
-        .private-tag {
-            background-color: #2196F3;
+        .privacy-item p {
+            color: #666;
+            font-size: 0.95rem;
         }
 
-        .public-tag {
+        .language-support {
+            text-align: center;
+            padding: 2rem;
+            background-color: #fff3e0;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .language-support h3 {
+            color: #e65100;
+            margin-bottom: 1rem;
+        }
+
+        .language-badges {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .language-badge {
             background-color: #ff9800;
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            font-weight: 500;
         }
 
         footer {
@@ -143,24 +307,22 @@
             border-top: 1px solid #e0e0e0;
         }
 
-        .contact-info {
-            background-color: #4CAF50;
-            color: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin: 2rem 0;
-            text-align: center;
+        .footer-links {
+            margin-top: 1.5rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
         }
 
-        .contact-info a {
-            color: white;
-            text-decoration: underline;
+        .footer-links a {
+            color: #4CAF50;
+            text-decoration: none;
             font-weight: 500;
         }
 
-        .section-icon {
-            display: inline-block;
-            margin-right: 0.5rem;
+        .footer-links a:hover {
+            text-decoration: underline;
         }
 
         @media (max-width: 768px) {
@@ -168,32 +330,29 @@
                 font-size: 2rem;
             }
 
+            header .tagline {
+                font-size: 1.1rem;
+            }
+
             .content {
                 padding: 2rem 1.5rem;
             }
 
-            h2 {
-                font-size: 1.5rem;
+            .features-grid {
+                grid-template-columns: 1fr;
             }
 
-            h3 {
-                font-size: 1.2rem;
-            }
-        }
-
-        @media print {
-            body {
-                background-color: white;
+            .audience-grid {
+                grid-template-columns: 1fr;
             }
 
-            .container {
-                box-shadow: none;
+            .privacy-grid {
+                grid-template-columns: 1fr;
             }
 
-            header {
-                background: #4CAF50;
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
+            .download-buttons {
+                flex-direction: column;
+                align-items: stretch;
             }
         }
     </style>
@@ -201,132 +360,182 @@
 <body>
     <div class="container">
         <header>
-            <h1>🥗 EatDiary 隱私權政策</h1>
-            <p class="subtitle">Privacy Policy</p>
+            <h1>🥗 EatDiary 飲食日記</h1>
+            <p class="tagline">你的健康飲食管理與分享社群</p>
+            <p class="subtitle">Your Health & Diet Management Community</p>
         </header>
 
         <div class="content">
-            <div class="last-updated">
-                最後更新日期：2025-01-30
+            <div class="intro-section">
+                <h2>開始你的健康飲食之旅</h2>
+                <p>EatDiary 是一個全方位的飲食管理應用程式，結合了智能營養追蹤、健康數據管理和社群美食分享功能。無論你是想要控制體重、管理健康飲食，還是尋找美食靈感，EatDiary 都能滿足你的需求。</p>
             </div>
 
-            <p>歡迎使用 EatDiary 飲食日記！我們重視您的隱私權，本政策說明我們如何收集、使用和保護您的個人資料。</p>
+            <h2 style="color: #4CAF50; font-size: 2rem; text-align: center; margin-bottom: 2rem;">🌟 主要功能</h2>
 
-            <h2><span class="section-icon">📋</span>資料收集</h2>
-            <p>我們收集以下資料以提供完整的服務體驗：</p>
-            <ul>
-                <li><strong>帳戶資訊</strong>：電子郵件地址（用於登入和通知）</li>
-                <li><strong>飲食記錄</strong>：照片、文字描述、營養數據</li>
-                <li><strong>健康數據</strong>：體重、身高、BMR/TDEE 計算結果</li>
-                <li><strong>位置資訊</strong>：使用地圖功能時的位置資料（可選）</li>
-            </ul>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <span class="feature-icon">📸</span>
+                    <h3>拍照記錄與分享</h3>
+                    <ul class="feature-list">
+                        <li>快速拍照記錄每一餐</li>
+                        <li>公開分享你的美食照片給其他用戶</li>
+                        <li>AI 智能辨識食物（功能開發中）</li>
+                        <li>支援多張照片上傳</li>
+                        <li>探索社群中的美食靈感</li>
+                    </ul>
+                </div>
 
-            <h2><span class="section-icon">🎯</span>資料使用</h2>
-            <p>您的資料用於以下目的：</p>
-            <ul>
-                <li>提供應用程式核心服務功能</li>
-                <li>改善使用者體驗和應用程式效能</li>
-                <li>資料雲端同步（跨裝置存取）</li>
-                <li>社群功能（僅限食物照片、營養數據、菜單、餐廳位置）</li>
-            </ul>
+                <div class="feature-card">
+                    <span class="feature-icon">📊</span>
+                    <h3>營養追蹤</h3>
+                    <ul class="feature-list">
+                        <li>記錄熱量、蛋白質、碳水化合物、脂肪</li>
+                        <li>視覺化營養數據</li>
+                        <li>每日目標設定與追蹤</li>
+                        <li>營養攝取分析報告</li>
+                        <li>飲食習慣洞察</li>
+                    </ul>
+                </div>
 
-            <h2><span class="section-icon">🔓</span>公開資料與私密資料</h2>
+                <div class="feature-card">
+                    <span class="feature-icon">🏃</span>
+                    <h3>健康數據<span class="privacy-badge">完全私密</span></h3>
+                    <ul class="feature-list">
+                        <li>體重記錄與趨勢圖表</li>
+                        <li>身高管理</li>
+                        <li>BMR/TDEE 自動計算</li>
+                        <li>活動量等級設定</li>
+                        <li>個人健康數據僅自己可見</li>
+                    </ul>
+                </div>
 
-            <div class="highlight-box">
-                <h3>🌐 公開分享的資料</h3>
-                <p><span class="data-type public-tag">公開</span> <strong>食物照片</strong></p>
-                <p>您上傳的食物照片將公開顯示在社群中，供其他用戶瀏覽和獲取飲食靈感。</p>
-                <ul>
-                    <li>您可以自由選擇是否上傳照片到應用程式</li>
-                    <li>上傳的照片會在社群功能中展示</li>
-                    <li>您隨時可以刪除已上傳的照片</li>
-                </ul>
+                <div class="feature-card">
+                    <span class="feature-icon">🍽️</span>
+                    <h3>食物資料庫</h3>
+                    <ul class="feature-list">
+                        <li>豐富的食物營養資料</li>
+                        <li>常用食物快速新增</li>
+                        <li>自訂食物項目</li>
+                        <li>品牌食品資料庫</li>
+                        <li>快速搜尋功能</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <span class="feature-icon">🗺️</span>
+                    <h3>餐廳地圖</h3>
+                    <ul class="feature-list">
+                        <li>探索附近餐廳</li>
+                        <li>餐廳收藏功能</li>
+                        <li>菜單瀏覽</li>
+                        <li>位置導航</li>
+                        <li>餐廳評價參考</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <span class="feature-icon">👥</span>
+                    <h3>社群功能<span class="privacy-badge public-badge">公開分享</span></h3>
+                    <ul class="feature-list">
+                        <li>瀏覽其他用戶分享的美食照片</li>
+                        <li>從社群中獲取飲食靈感</li>
+                        <li>發現新的健康食譜</li>
+                        <li>美食探索與交流</li>
+                        <li>建立健康飲食社群</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <span class="feature-icon">💫</span>
+                    <h3>個人化體驗</h3>
+                    <ul class="feature-list">
+                        <li>繁體中文 / English 雙語支援</li>
+                        <li>淺色 / 深色主題</li>
+                        <li>資料雲端同步</li>
+                        <li>跨裝置存取</li>
+                        <li>個人化介面設定</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <span class="feature-icon">🔐</span>
+                    <h3>隱私保護</h3>
+                    <ul class="feature-list">
+                        <li>健康數據完全私密（體重、身高等）</li>
+                        <li>食物照片公開分享（可自行選擇是否上傳）</li>
+                        <li>資料加密傳輸</li>
+                        <li>安全的雲端儲存</li>
+                        <li>完整的資料控制權</li>
+                    </ul>
+                </div>
             </div>
 
-            <div class="highlight-box">
-                <h3>🔒 完全私密的資料</h3>
-                <p>以下資料<strong>僅您本人可見</strong>，絕不對外公開：</p>
-                <ul>
-                    <li><span class="data-type private-tag">私密</span> 體重記錄</li>
-                    <li><span class="data-type private-tag">私密</span> 身高記錄</li>
-                    <li><span class="data-type private-tag">私密</span> BMR/TDEE 計算結果</li>
-                    <li><span class="data-type private-tag">私密</span> 個人營養目標設定</li>
-                    <li><span class="data-type private-tag">私密</span> 飲食記錄的文字說明</li>
-                    <li><span class="data-type private-tag">私密</span> 營養攝取統計數據</li>
-                </ul>
+            <div class="privacy-section">
+                <h2>🔒 您的隱私，我們守護</h2>
+                <p>我們非常重視您的隱私安全。EatDiary 採用分級隱私保護機制，讓您完全掌控自己的資料。</p>
+
+                <div class="privacy-grid">
+                    <div class="privacy-item">
+                        <h4>🔵 完全私密資料</h4>
+                        <p>體重、身高、BMR/TDEE 等健康數據僅您本人可見，絕不對外公開。</p>
+                    </div>
+                    <div class="privacy-item">
+                        <h4>🟠 自主分享資料</h4>
+                        <p>食物照片由您決定是否上傳分享，隨時可以刪除。</p>
+                    </div>
+                    <div class="privacy-item">
+                        <h4>🔐 加密保護</h4>
+                        <p>所有資料透過 HTTPS 加密傳輸，使用安全的雲端儲存系統。</p>
+                    </div>
+                    <div class="privacy-item">
+                        <h4>✅ 資料控制權</h4>
+                        <p>您隨時可以匯出、刪除或管理您的個人資料。</p>
+                    </div>
+                </div>
             </div>
 
-            <h2><span class="section-icon">💾</span>資料儲存</h2>
-            <ul>
-                <li><strong>雲端服務</strong>：使用 PocketBase 安全雲端儲存系統</li>
-                <li><strong>加密傳輸</strong>：所有資料透過 HTTPS 加密傳輸</li>
-                <li><strong>存取控制</strong>：私密數據僅您本人可存取</li>
-                <li><strong>公開資料</strong>：食物照片為公開資料，所有用戶可瀏覽</li>
-            </ul>
-
-            <h2><span class="section-icon">🤝</span>資料分享</h2>
-            <div class="warning-box">
-                <p><strong>我們的承諾：</strong></p>
-                <ul>
-                    <li>✅ 我們<strong>不會</strong>將您的個人資料分享給第三方</li>
-                    <li>✅ 食物照片會在應用程式內公開顯示給其他用戶</li>
-                    <li>✅ 健康數據（體重、身高、BMR/TDEE 等）<strong>絕不</strong>對外公開</li>
-                    <li>✅ 我們不會將您的資料用於廣告或行銷目的</li>
-                </ul>
+            <div class="language-support">
+                <h3>🌐 多語言支援</h3>
+                <div class="language-badges">
+                    <span class="language-badge">繁體中文</span>
+                    <span class="language-badge">English</span>
+                </div>
             </div>
 
-            <h2><span class="section-icon">🔐</span>資料安全</h2>
-            <p>我們採取以下措施保護您的資料：</p>
-            <ul>
-                <li>使用業界標準的加密技術（HTTPS/TLS）</li>
-                <li>定期進行安全性審查和更新</li>
-                <li>限制員工存取個人資料的權限</li>
-                <li>使用安全的雲端儲存服務</li>
-            </ul>
-
-            <h2><span class="section-icon">👶</span>兒童隱私</h2>
-            <p>本應用程式適合 <strong>13 歲以上</strong>使用者使用。我們不會故意收集 13 歲以下兒童的個人資料。如果您是家長或監護人，發現您的孩子向我們提供了個人資料，請立即聯繫我們。</p>
-
-            <h2><span class="section-icon">📝</span>政策更新</h2>
-            <p>我們可能會不定期更新本隱私權政策。重大變更時，我們會：</p>
-            <ul>
-                <li>在應用程式內通知您</li>
-                <li>透過電子郵件通知（如適用）</li>
-                <li>更新本頁面頂部的「最後更新日期」</li>
-            </ul>
-            <p>建議您定期查看本政策以了解最新變更。</p>
-
-            <div class="contact-info">
-                <h2 style="color: white; border: none; margin-top: 0;">📧 聯絡我們</h2>
-                <p>如有任何隱私權相關問題或疑慮，歡迎隨時與我們聯繫：</p>
-                <p><strong>Email:</strong> <a href="mailto:service@yaoshou365.com">service@yaoshou365.com</a></p>
-                <p><strong>開發團隊:</strong> Yaoshou365 EatDiary Team</p>
-                <p style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.3);">
-                    <strong>🗑️ 刪除帳戶：</strong><a href="./delete.html" style="color: white; text-decoration: underline;">請求刪除您的帳戶和資料</a>
-                </p>
+            <div class="target-audience">
+                <h2>✨ 適合族群</h2>
+                <div class="audience-grid">
+                    <div class="audience-item">想要控制體重的人</div>
+                    <div class="audience-item">健身愛好者</div>
+                    <div class="audience-item">需要管理飲食的健康管理者</div>
+                    <div class="audience-item">對營養攝取有要求的使用者</div>
+                    <div class="audience-item">喜歡分享美食的美食愛好者</div>
+                    <div class="audience-item">追求健康生活方式的人</div>
+                </div>
             </div>
 
-            <h2><span class="section-icon">⚖️</span>適用法規</h2>
-            <p>本隱私權政策遵循以下法規：</p>
-            <ul>
-                <li>台灣個人資料保護法</li>
-                <li>歐盟一般資料保護規範（GDPR）相關原則</li>
-                <li>其他適用的資料保護法規</li>
-            </ul>
-
-            <hr style="margin: 3rem 0; border: none; border-top: 1px solid #e0e0e0;">
-
-            <p style="text-align: center; color: #666; font-size: 0.9rem;">
-                感謝您使用 EatDiary！我們致力於保護您的隱私權，並提供安全、透明的服務。
-            </p>
+            <div class="cta-section">
+                <h2>🚀 立即開始</h2>
+                <p>下載 EatDiary，開始你的健康飲食之旅！</p>
+                <div class="download-buttons">
+                    <a href="#" class="download-btn">Google Play 下載</a>
+                    <a href="#" class="download-btn">App Store 下載</a>
+                </div>
+                <p style="margin-top: 1.5rem; font-size: 0.9rem; opacity: 0.9;">免費下載，立即使用所有功能</p>
+            </div>
         </div>
 
         <footer>
             <p><strong>EatDiary 飲食日記</strong></p>
             <p>© 2025 Yaoshou365. All rights reserved.</p>
-            <p style="margin-top: 1rem; font-size: 0.9rem;">
-                本隱私權政策最後更新於 2025 年 10 月 30 日
+            <p style="margin-top: 1rem;">
+                <strong>聯絡我們：</strong> service@yaoshou365.com
             </p>
+            <div class="footer-links">
+                <a href="./privacy.html">隱私權政策</a>
+                <a href="./delete.html">刪除帳戶</a>
+            </div>
         </footer>
     </div>
 </body>
